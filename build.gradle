@@ -9,8 +9,8 @@ apply from: rootDir.toString() + '/dependencies.gradle'
 group = properties['group']
 version = properties['version']
 
-java.sourceCompatibility = JavaVersion.VERSION_11
-java.targetCompatibility = JavaVersion.VERSION_11
+//java.sourceCompatibility = JavaVersion.VERSION_11
+//java.targetCompatibility = JavaVersion.VERSION_11
 
 ext {
     pluginMain = properties['plugin.main'] == 'default' ?
@@ -36,6 +36,15 @@ repositories {
         name = "sonatype"
         url = "https://oss.sonatype.org/content/groups/public/"
     }
+    // NMS
+    maven {
+        url = uri("https://repo.codemc.org/repository/nms/")
+    }
+    // Streamline Essentials
+    maven {
+        name = "streamline-essentials"
+        url = "https://repo.codemc.org/repository/streamline-essentials/"
+    }
     maven { url "https://jitpack.io" }
     maven {
         name = "placeholderapi"
@@ -44,8 +53,6 @@ repositories {
     maven { url 'https://repo.papermc.io/repository/maven-snapshots/' }
     maven { url 'https://repo.papermc.io/repository/maven-public/' }
 }
-
-disableAutoTargetJvm()
 
 dependencies {
     // Defaults.

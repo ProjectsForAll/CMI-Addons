@@ -9,3 +9,7 @@ folia-supported: true
 
 depend:
   - BukkitOfUtils
+  - CMI
+
+softdepend:
+  - PlaceholderAPI

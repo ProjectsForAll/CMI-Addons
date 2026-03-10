@@ -1,0 +1,6 @@
+on-nick-change:
+  update-tablist: true
+  update-displayname: true
+  update-skin: true
+  # Use '%passed%' to use the new CMI passed nickname
+  change-to: "%passed%"
